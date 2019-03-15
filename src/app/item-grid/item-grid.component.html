@@ -1,16 +1,22 @@
 <div class="root">
-  <ag-grid-angular
-    class="ag-theme-balham"
-    [enableSorting]="true"
-    [enableFilter]="true"
-    [rowData]="items"
-    [deltaRowDataMode]="true"
-    [getRowNodeId]="getRowNodeId"
-    [columnDefs]="columnDefs"
-    [rowSelection]="'multiple'"
-    [enableColResize]="true"
-    [suppressScrollOnNewData]="true"
-    [singleClickEdit]="true"
-    (gridReady)="onGridReady($event)">
-  </ag-grid-angular>
+  <div class="grid">
+    <ag-grid-angular
+      class="ag-theme-balham"
+      [enableSorting]="true"
+      [enableFilter]="true"
+      [rowData]="items"
+      [deltaRowDataMode]="true"
+      [getRowNodeId]="getRowNodeId"
+      [columnDefs]="columnDefs"
+      [rowSelection]="'multiple'"
+      [enableColResize]="true"
+      [suppressScrollOnNewData]="true"
+      [singleClickEdit]="true"
+      (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
+  </div>
+
+  <div class="operation">
+    <button (click)="onToggleBrandName()">ブランド名カラムの表示/非表示</button>
+  </div>
 </div>

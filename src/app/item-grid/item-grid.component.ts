@@ -42,6 +42,7 @@ export class ItemGridComponent {
   }];
   private gridApi: GridApi;
   private columnApi: ColumnApi;
+  private isShowBrand = false;
   getRowNodeId = (data) => data.janCd; // deltaRowDataModeに必要
 
   constructor() {
@@ -54,5 +55,12 @@ export class ItemGridComponent {
   onGridReady(params) {
     this.gridApi = params.api;
     this.columnApi = params.columnApi;
+
+    this.columnApi.setColumnVisible('brandName', this.isShowBrand);
+  }
+
+  onToggleBrandName() {
+    this.isShowBrand = !this.isShowBrand;
+    this.columnApi.setColumnVisible('brandName', this.isShowBrand);
   }
 }
